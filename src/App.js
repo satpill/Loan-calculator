@@ -6,7 +6,7 @@ export class App extends Component {
   render(){
   return (
       <React.Fragment>
-       <LoanCalc />
+        <LoanCalc />
       </React.Fragment>
     );
   }  

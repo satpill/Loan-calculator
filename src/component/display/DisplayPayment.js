@@ -5,7 +5,6 @@ export class DisplayPayment extends Component {
     render() {
         const{paymentduration} = this.props;
         const payment= paymentduration.amount.toString();
-        console.log(paymentduration.amount);
 
         return (
         <React.Fragment>

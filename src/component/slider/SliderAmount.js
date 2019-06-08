@@ -16,4 +16,4 @@ export class SliderAmount extends Component {
     }
 }
 
-export default SliderAmount
+export default SliderAmount;

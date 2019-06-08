@@ -3,13 +3,18 @@ import './Display.css';
 export class DisplayInterest extends Component {
    
     render() {
- 
+
+        /*---------------------------------------------------------------------------------
+        -------------The following code convert the object into array---------------------
+        -----------and map to get the required data and then convert it--------------------
+        ---------------------------------into string-------------------------------------------
+        ----------------------------------------------------------------------------------*/
+
         const{interest} = this.props;
         const interestrate = Object.keys(interest).map(res => {
             return interest[res]
         })
         const interestvalue= interestrate.toString();
-        console.log(interestrate);
         return (
             <div className="container mb-5">
                 <div className="row d-flex justify-content-center">
@@ -25,4 +30,4 @@ export class DisplayInterest extends Component {
     }
 }
 
-export default DisplayInterest
+export default DisplayInterest;

@@ -15,4 +15,4 @@ export class SliderDuration extends Component {
     }
 }
 
-export default SliderDuration
+export default SliderDuration;

@@ -29,6 +29,11 @@ export class loanCalc extends Component {
         error: false
        }
      
+
+       /*------------------------------------------------------------------------------
+       ----------It fetch the data from the API and  in immutable it store the data----
+       ---------------------------------in state--------------------------------------
+       ------------------------------------------------------------------------------- */
      
         getLoanStatus = () => {
           
@@ -63,13 +68,21 @@ export class loanCalc extends Component {
                  })
                }
              })
-            
-          
         }
-    
+
+
+       /*------------------------------------------------------------------------------
+       ----- When component mount it call a function to fetch the data------------------
+       ------------------------------------------------------------------------------- */
        componentDidMount(){
          this.getLoanStatus();
        }
+
+
+       /*------------------------------------------------------------------------------
+       ----- set the state api value with updated api value and call a function to------
+       -------------------fetch the data from API---------------------------------------
+       ------------------------------------------------------------------------------- */
 
        getInterestPaymentData = () => {
         const{amountvalue,monthduration,baseapi,nummonth} = this.state;
@@ -81,6 +94,12 @@ export class loanCalc extends Component {
         })
        }
 
+
+
+       /*------------------------------------------------------------------------------
+       -----AmountValue value set when slider component of sliderDuration change and 
+       --------------call a function to update the UI with updated value---------------
+       ------------------------------------------------------------------------------- */
        sliderAmountValue = (e) => {
       
             this.setState({
@@ -91,7 +110,12 @@ export class loanCalc extends Component {
         })
        }
 
-       sliderMonthDuration = (e) => {
+
+       /*------------------------------------------------------------------------------
+       -----Monthduration value set when slider component of sliderDuration change and 
+       --------------call a function to update the UI with updated value---------------
+       ------------------------------------------------------------------------------- */
+       sliderMonthDuration = (e) => {        
             
         this.setState({
           monthduration:e.target.value
@@ -101,10 +125,17 @@ export class loanCalc extends Component {
        }
        
 
+
     render() {
+
+      /*-Initially when data is not available at that time spinner is loaded--*/
       let LoanDisplay = <Spinner />
 
+
+      /*--If data is available it load the following JSX code --*/
+
       if(this.state.loanData){
+
         LoanDisplay = (
           <React.Fragment>
           <h1 className="text-center mx-auto my-4 textcolor">Loan calculator</h1>
@@ -134,12 +165,12 @@ export class loanCalc extends Component {
          )
       }
       
-         
+      /*--when there is a error the following code load the spinner and error message--*/
+
        if(this.state.error){
-          LoanDisplay = <Spinner/>
-                         
-                        
+          LoanDisplay = <Spinner/>                
        }
+
         return (
             <React.Fragment>
               {LoanDisplay}

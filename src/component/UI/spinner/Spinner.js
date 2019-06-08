@@ -12,4 +12,4 @@ export class spinner extends Component {
     }
 }
 
-export default spinner
+export default spinner;
