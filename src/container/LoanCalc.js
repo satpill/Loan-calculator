@@ -153,10 +153,10 @@ export class loanCalc extends Component {
   
           <div className="container">
               <div className="row">
-                 <div className="col-md-6">
+                 <div className="col-md-6 col-lg-6  mx-auto">
                  <SliderAmount slidervalue={this.sliderAmountValue} amountvalue={this.state.amountvalue} />
                  </div>
-                 <div className="col-md-6">
+                 <div className="col-md-6 col-lg-6  mx-auto">
                  <SliderDuration slidermonthduration={this.sliderMonthDuration} durationvalue={this.state.monthduration} />
                  </div>
               </div>
