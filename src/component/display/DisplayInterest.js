@@ -1,0 +1,28 @@
+import React, { Component } from 'react'
+import './Display.css';
+export class DisplayInterest extends Component {
+   
+    render() {
+ 
+        const{interest} = this.props;
+        const interestrate = Object.keys(interest).map(res => {
+            return interest[res]
+        })
+        const interestvalue= interestrate.toString();
+        console.log(interestrate);
+        return (
+            <div className="container mb-5">
+                <div className="row d-flex justify-content-center">
+                   <div className="col-md-8 d-flex-column borderbox mt-5 justify-content-center">
+                         <div>
+                         <label htmlFor="payment" className="mx-auto">Interest: %</label>
+                         </div>
+                        <h1 className="odometer">{interestvalue}</h1>
+                   </div>
+                </div>
+            </div>
+        )
+    }
+}
+
+export default DisplayInterest
